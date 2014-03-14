@@ -1,0 +1,4 @@
+#!/bin/bash
+
+python report.py > tickets.csv
+cat gnuplot.conf | gnuplot
