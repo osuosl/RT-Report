@@ -4,8 +4,8 @@ import config
 
 db = MySQLdb.connect(config.host,
                      config.user,
-                      config.passwd,
-                      config.db)
+                     config.passwd,
+                     config.db)
 
 # you must create a Cursor object. It will let
 #  you execute all the query you need
