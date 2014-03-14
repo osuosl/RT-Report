@@ -7,8 +7,6 @@ db = MySQLdb.connect(config.host,
                      config.passwd,
                      config.db)
 
-# you must create a Cursor object. It will let
-#  you execute all the query you need
 cur = db.cursor()
 
 # Use all the SQL you like
