@@ -17,5 +17,5 @@ an example.
 Usage
 -----
 
-It's a shell script, just run ./report
+It's a shell script, just run `./report`
 
