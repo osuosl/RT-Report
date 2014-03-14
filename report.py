@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import MySQLdb
 import config
+import datetime
 
 db = MySQLdb.connect(config.host,
                      config.user,
@@ -9,9 +10,17 @@ db = MySQLdb.connect(config.host,
 
 cur = db.cursor()
 
-# Use all the SQL you like
-cur.execute("SELECT COUNT(id) FROM Tickets")
+d = datetime.date(2014,1,1)
+end_day = d.today()
 
-# print all the first cell of all the rows
-for row in cur.fetchall() :
-    print row[0]
+delta = datetime.timedelta(days=1)
+
+while d<= end_day:
+
+   cur.execute("SELECT count(id) FROM Tickets WHERE Date(Created) = %s;", (str(d)))
+
+   for row in cur.fetchall() :
+      print "%s,%s" % (d,row[0])
+
+   d+=delta
+
