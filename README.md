@@ -11,7 +11,7 @@ Installation
 Configuration
 ------------
 
-report will import configurations from a config.py; look at config.py.dist for
+report will import configurations from a `config.py`; look at `config.py.dist` for
 an example.
 
 Usage
