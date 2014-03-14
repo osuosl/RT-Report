@@ -1,0 +1,15 @@
+host='localhost'
+db='rt'
+user='admin'
+passwd='password'
+
+query = """SELECT COUNT(DISTINCT(EffectiveId))
+                  FROM Tickets 
+                  WHERE 
+                        Date(Created) <= '%s' 
+                  AND 
+                        (Date(Resolved) > '%s' OR Status IN('open','new'))
+                  AND
+                        Status NOT IN ('rejected','stalled','deleted')
+                """
+
